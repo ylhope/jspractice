@@ -58,3 +58,6 @@ for(var i=0;i<menu.length;i++){
         index++;
     }  
 } 
+$(function () {
+    $('#nav1-1 li:eq(1) a').tab('show');
+});

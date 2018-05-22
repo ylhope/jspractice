@@ -3,9 +3,9 @@
 <head>  
     <meta charset="UTF-8">  
     <title>多级下拉菜单</title>  
-    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>  
+    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>   -->
     <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"/>  
-    <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>   -->
+    <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>  
     <link rel="stylesheet" type="text/css" href="menu.css">  
 </head>  
 <body>  
@@ -16,18 +16,24 @@
             <li>PHP</li>
         </ul>
         <ul id="nav1-1">
-            <li>Java介绍</li>
-            <li>Java常用工具</li>
+            <li class="active"><a href="#java-in" data-toggle="tab">Java介绍</a></li>
+            <li><a href="#java-tool" data-toggle="tab">Java常用工具</a></li>
         </ul>
         <ul id="nav1-2">
-            <li>JavaScript介绍</li>
-            <li>JavaScript常用工具</li>
+            <li><a href="#javascript-in" data-toggle="tab">JavaScript介绍</a></li>
+            <li><a href="#javascript-tool" data-toggle="tab">JavaScript常用工具</a></li>
         </ul>
         <ul id="nav1-3">
-            <li>PHP介绍</li>
-            <li>PHP常用工具</li>
+            <li><a href="#php-in" data-toggle="tab">PHP介绍</a></li>
+            <li><a href="#php-tool" data-toggle="tab">PHP常用工具</a></li>
         </ul>
     </div> 
+    <div class="tab-pane fade in active" id="java-in">
+        <p>java是。。。。</p>
+    </div>
+    <div class="tab-pane fade" id="java-tool">
+        <p>java是。。。。</p>
+    </div>
     <script type="text/javascript" src="menu.js"></script>  
 </body>  
 </html>  
