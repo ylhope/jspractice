@@ -1,0 +1,47 @@
+*{
+    padding:0;
+    margin:0;
+}
+li{
+    list-style:none;
+}
+ul{
+    background:rgb(95, 199, 247);
+    width:250px;
+    float:left;
+}
+b{
+    display:block;
+    width:500px;
+    height:40px;
+    background:rgb(24,122,173);
+}
+ul li{
+    height:32px;
+}
+ul li:hover{
+    height:32px;
+    background:rgb(95, 125, 221);
+}
+#nav1{
+    position:absolute;
+}
+#nav1-1{
+    position:relative;
+    left:0;
+    background:rgb(124, 158, 231);
+    visibility:hidden;
+} 
+#nav1-2{
+    position:relative;
+    left:-250px;
+    background:rgb(124, 158, 231);
+    visibility:hidden;
+} 
+#nav1-3{
+    position:relative;
+    left:-500px;
+    background:rgb(124, 158, 231);
+    visibility:hidden;
+    float: left 0;
+} 

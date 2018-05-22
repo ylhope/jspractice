@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>计算器</title>
+        <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <script src="https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"></script>
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+    </head>
+
+    <body ng-app="DemoApp">
+        <div class="container" ng-controller="DemoController">
+            <div class="row">
+                <div class="col-sm-4"></div>
+                <div class="col-sm-4">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title" style="height:40px";width:90%>
+                                <input type="text" class="form-control text-right" ng-model="result"/>
+                            </div>
+                        </div>
+                        <div class="panel-body" style="background:#BCE8F1;">
+                            <div class="row">
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('%')">%</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-clickon="click('√')">&#8730;</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-clickon="click('^')">x<sup>2</sup></button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('1/x')">1/x</button>
+                                <br /><br />
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('CE')">CE</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('C')">C</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('--')">&#8592;</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('/')">÷</button>
+                                <br /><br />
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('7')">7</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('8')">8</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('9')">9</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('*')">×</button>
+                                <br /><br />
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('4')">4</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('5')">5</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('6')">6</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('-')">-</button>
+                                <br /><br />
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('1')">1</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('2')">2</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('3')">3</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('+')">+</button>
+                                <br /><br />
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('±')">±</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('0')">0</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('.')">.</button>
+                                <button class="col-sm-3 btn" style="border:2px solid #BCE8F1; background-color: gainsboro;color:blue" ng-click="click('=')">&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;</button>
+                                <br /><br />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4"></div>
+            </div>
+        </div>
+        <script>
+            var app = angular.module('DemoApp', []);
+            app.controller('DemoController', function($scope) {
+                $scope.result = "";
+                $scope.expression = "";
+                var b = false;
+                $scope.click = function(value) {
+                    if(value == "=") {
+                        $scope.result = eval($scope.expression);
+                        b = true;
+                    } else if(value == "C") {
+                        $scope.result = "";
+                        $scope.expression = "";
+                    } else if(value == "CE") {
+                        $scope.expression = "";
+                    }  else if(value == "^") {
+                        $scope.expression = $scope.expression + "*" + $scope.expression;
+                        $scope.result = eval($scope.expression);
+                        b = true;
+                    } else if(value == "√") {
+                        $scope.result = Math.sqrt(eval($scope.expression));
+                        b = true;
+                    } else if(value == "1/x") {
+                        $scope.expression = 1/$scope.expression
+                        $scope.result = eval($scope.expression);
+                        b = true;
+                    } else if(value == "--") {
+                        $scope.expression --;
+                        b = false;
+                    } else if(value == "±") {
+                        $scope.expression = -$scope.expression;
+                        $scope.result = eval($scope.expression);
+                        b = false;
+                    } else if(value == "+" || value == "-" ||value == "*" ||value == "/" ){
+                        $scope.expression = $scope.expression + value;
+                        $scope.result = $scope.result + value;    
+                        b = false;                    
+                    } else{
+                        if(b == true){
+                            $scope.result = "";
+                            $scope.expression = "";
+                        }
+                        $scope.expression = $scope.expression + value;
+                        $scope.result = $scope.result + value;
+                    }
+                }
+            });
+        </script>
+    </body>
+
+</html>
