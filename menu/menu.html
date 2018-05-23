@@ -3,66 +3,45 @@
 <head>  
     <meta charset="UTF-8">  
     <title>多级下拉菜单</title>  
-    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>   -->
+    <!-- <script type="text/javascript" src="http://libs.baidu.com/jquery/1.9.0/jquery.js"></script>  
     <link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css"/>  
-    <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>  
-    <!-- <link rel="stylesheet" type="text/css" href="menu.css">   -->
+    <script type="text/javascript" src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>   -->
+    <link rel="stylesheet" type="text/css" href="menu.css">  
 </head>  
 <body>  
-    
-<ul id="myTab" class="nav nav-tabs nav-stacked">
-        <li class="dropdown active">
-            <a href="#" id="myTabDrop1" class="dropdown-toggle"
-                data-toggle="dropdown">Java
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                <li><a href="#java-in" tabindex="-1" data-toggle="tab">java介绍</a></li>
-                <li><a href="#java-tool" tabindex="-1" data-toggle="tab">java工具</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#php" id="myTabDrop1" class="dropdown-toggle"
-                data-toggle="dropdown">PHP
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                <li><a href="#php-in" tabindex="-1" data-toggle="tab">PHP介绍</a></li>
-                <li><a href="#php-tool" tabindex="-1" data-toggle="tab">PHP工具</a></li>
-            </ul>
-        </li>
-        <li class="dropdown">
-            <a href="#javascript" id="myTabDrop1" class="dropdown-toggle"
-                data-toggle="dropdown">JavaScript
-                <b class="caret"></b>
-            </a>
-            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1">
-                <li><a href="#javascript-in" tabindex="-1" data-toggle="tab">JavaScript</a></li>
-                <li><a href="#javascript-tool" tabindex="-1" data-toggle="tab">JavaScript</a></li>
-            </ul>
-        </li>
-        
-    </ul>
-    <div id="myTabContent" class="tab-content">
-        <div class="tab-pane   in active" id="java-in">
-            <p></p>
-        </div>
-        <div class="tab-pane " id="java-tool">
-            <p></p>
-        </div>
-        <div class="tab-pane " id="java-in">
-            <p></p>
-        </div>
-        <div class="tab-pane " id="java-tool">
-            <p></p>
-        </div>
-        <div class="tab-pane " id="java-in">
-            <p></p>
-        </div>
-        <div class="tab-pane " id="java-tool">
-            <p></p>
-        </div>
-    </div>    
-    <!-- <script type="text/javascript" src="menu.js"></script>   -->
+    <div id="nav1">
+        <ul id="nav2">
+            <li>Java</li>
+            <li>JavaScript</li>
+            <li>PHP</li>
+        </ul>
+        <ul id="nav1-1">
+            <li>Java介绍</li>
+            <li>Java常用工具</li>
+        </ul>
+        <ul id="nav1-2">
+            <li>JavaScript介绍</li>
+            <li>JavaScript常用工具</li>
+        </ul>
+        <ul id="nav1-3">
+            <li>PHP介绍</li>
+            <li>PHP常用工具</li>
+        </ul>
+    </div> 
+    <div id="nav2-1">
+        <p>java是一段介绍java是一段介绍java是一段介绍java是一段介绍java是一段介绍java是一段介绍</p>
+        <p>java用一种工具java用一种工具java用一种工具java用一种工具java用一种工具java用一种工具</p>
+    </div>
+    <div id="nav2-2">
+        <p>JavaScript是一段介绍JavaScript是一段介绍JavaScript是一段介绍JavaScript是一段介绍JavaScript是一段介绍JavaScript是一段介绍</p>
+        <p>JavaScript用一种工具JavaScript用一种工具JavaScript用一种工具JavaScript用一种工具JavaScript用一种工具JavaScript用一种工具</p>
+    </div>
+    <div id="nav2-3">
+        <p>PHP是一段介绍PHP是一段介绍PHP是一段介绍PHP是一段介绍PHP是一段介绍PHP是一段介绍</p>
+        <p>PHP用一种工具PHP用一种工具PHP用一种工具PHP用一种工具PHP用一种工具PHP用一种工具</p>
+    </div>
+    <div style="background:red;height:200px;width:300px;float:left"></div>
+    <div style="background:yellow;height:200px;width:300px;float:left"></div>
+    <script type="text/javascript" src="menu.js"></script>  
 </body>  
 </html>  
